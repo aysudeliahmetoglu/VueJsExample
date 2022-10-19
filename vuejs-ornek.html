@@ -14,7 +14,8 @@
         <h1>{{ title }}</h1>
         <button>{{ buttonTitle}}</button>
         <p v-text="paragraph"></p>
-        <a v-bind:href="link" v-bind:data-id="dataId">Github Account</a>
+        <!-- <a v-bind:href="link" v-bind:data-id="dataId">Github Account</a> -->
+        <a :href="link" v-bind:data-id="dataId">Github Account</a>
         <p v-html ="details"></p>
 
     </div>
