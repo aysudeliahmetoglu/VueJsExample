@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue JS Çalışmam</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+     <input type="text" v-model="age">
+     <p> JavaScript : {{ age >=18 ? 'Reşittir' : 'Reşit Değildir'}}</p>
+     <p> Method : {{ ageWriter() }}</p>  
+     <hr>
+     <p>Computed : {{ ageWriterComp }}</p>  
+     <p>{{ sayi }}</p>
+     <button @click="sayi++">Sayı Arttır.</button>
+    </div>
+
+
+    <script>
+        new Vue({
+            el: "#app",
+            data:{
+                age:0,
+                sayi :0
+            },
+            methods : {
+                ageWriter(){
+                    console.log("method çalıştı.")
+                return this.age >=18 ? 'Reşittir' : 'Reşit Değildir'
+                }
+            },
+            computed :{
+                ageWriterComp(){
+                    console.log("computed çalıştı.")
+                    return this.age >=18 ? 'Reşittir' : 'Reşit Değildir'
+                }
+            },
+            watch :{
+                age(value1,value2){
+                    console.log("New: " + value1) //new value
+                    console.log("Old: " + value2) //old value
+
+
+                }
+            }
+          
+        });
+    </script>
+
+</body>
+
+</html>
